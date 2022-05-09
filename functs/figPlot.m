@@ -1,7 +1,14 @@
 function figPlot(p)
-% figPlot(p)
-% Function that plots the final results for all methods.
+%% Path Setup
+% addpath 'tensorlab'     % Tens2mat
+% addpath 'FOptM-share'   % Convex under unitary constraint
+% addpath 'mdmp'          % Tensor Trace
+% addpath 'TT_TensNet'    % Merge the proposed networks
+% addpath 'TT_Approximate'% Approximation Algorithm
+% addpath 'TNPE'          % TNPE algorithm package
+% addpath 'Self_Tool'     % manifold dimensional and KNN clasifier
 
+%% Algo(App, TN, TNPE, KNN) * tau * classsize * iter;
 ResErr             = nan(8, length(p.tau_list),length(p.classsize_list), p.repeats, size(p.nAbl,1)); 
 ResStor            = ResErr;
 ResTime_subspace   = ResErr;
