@@ -15,7 +15,7 @@ function missing = check_dependencies(methods, failIfMissing)
                 required = [required, {'tt_matrix', 'TTeMPS_op', 'amen_eigenvalue', 'lobpcg', 'tmprod'}]; %#ok<AGROW>
             case 'TTNPE'
                 required = [required, {'OptStiefelGBB', 'knnsearch', 'tens2mat', ...
-                                       'TenConPro', 'L', 'R', 'L_inv', 'LSQ_Unitary_L', 'LSQ_Unitary_R'}]; %#ok<AGROW>
+                                       'TenConPro', 'L', 'R', 'L_inv', 'LSQ_Unitary_L', 'LSQ_Unitary_R', 'AXB', 'XAB'}]; %#ok<AGROW>
             case {'CMDA', 'DGTDA'}
                 required = [required, {methods{i}, 'classbased_differences', 'tmprod'}]; %#ok<AGROW>
             case 'LDA'

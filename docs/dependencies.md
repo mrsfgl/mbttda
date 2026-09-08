@@ -10,7 +10,7 @@ The initial validation target is **MATLAB R2024b** with **Statistics and Machine
 | --- | --- |
 | FOptM | Orthogonality-constrained optimization |
 | Tensorlab | Tensor/matrix products and matricization |
-| TP Toolbox array helpers | Historical tensor utilities |
+| TP Toolbox | Retained for attribution/history; no longer added to the MATLAB path |
 | tensor_classification | CMDA and DGTDA |
 
 The project has its own cyclic `ndim_unfold`, matching the old convention while removing the `wshift` dependency. The core example does not require Wavelet, Image Processing, Parallel Computing, or Optimization Toolbox.
@@ -24,9 +24,9 @@ setup_mbttda({'D:/toolboxes/TTNPE'});
 check_dependencies({'TTNPE'});
 ```
 
-The approximation solver needs `TenConPro`, `L`, `R`, `L_inv`, `LSQ_Unitary_L`, and `LSQ_Unitary_R`. These helpers are not bundled here. The dependency check verifies symbols; compatibility with a particular checkout still requires the optional smoke test.
+The approximation solver needs `TenConPro`, `L`, `R`, `L_inv`, `LSQ_Unitary_L`, `LSQ_Unitary_R`, and their `AXB`/`XAB` callbacks from the upstream checkout. The duplicate local `AXB` copy has been removed. The dependency check verifies symbols; compatibility with a particular checkout still requires the optional smoke test.
 
-The historical `main_TNPE` prototype is separate from the TTNPE comparison. It additionally requires upstream `Tucker_U2Y`, `H_Generator`, `diffU`, and `Dim_Tucker`; it reports missing helpers explicitly.
+The unused Tucker `main_TNPE` prototype has been removed. It was separate from the maintained TTNPE comparison and required additional unbundled helpers.
 
 ## Optional block-TT comparisons
 

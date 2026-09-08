@@ -5,7 +5,7 @@ Local delivery, 2026-09-08. Base revision: `189e39fa5e2d958616b389905f92b69f30f8
 ## Completed checks
 
 - Cloned the complete repository and created local branch `codex/modernize-mbttda`.
-- Ran MISS_HIT 0.9.44 syntax/lint checks on all 87 first-party MATLAB source and test files; both checks passed.
+- Ran MISS_HIT 0.9.44 syntax/lint checks on all 81 remaining first-party MATLAB source and test files after cleanup; both checks passed.
 - Applied consistent formatting to first-party MATLAB files.
 - Inspected MAT-file headers to document the actual bundled array dimensions.
 - Checked the upstream TTeMPS multiple-eigenvector return interface and current MathWorks Actions versions.

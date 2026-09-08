@@ -15,7 +15,7 @@ function info = setup_mbttda(externalPaths)
         end
         addpath(genpath(externalPaths{i}), '-end');
     end
-    bundled = {'FOptM', 'tensorlab', fullfile('tptool', 'array'), ...
+    bundled = {'FOptM', 'tensorlab', ...
                fullfile('tensor_classification-master', 'code', 'tensor_classification')};
     for i = 1:numel(bundled)
         addpath(fullfile(root, 'third-party', bundled{i}), '-end');

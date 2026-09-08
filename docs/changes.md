@@ -11,6 +11,17 @@ Baseline: `189e39fa5e2d958616b389905f92b69f30f85ce4`.
 - Replaced the incomplete plotting script and implicit workspace loads with explicit result loading.
 - Original datasets and third-party files are unchanged; a tracked Finder metadata file was removed.
 
+## Cleanup after modernization
+
+- Removed the unused Tucker `main_TNPE` prototype, superseded `hosvd2` and `wwq_tensordot` helpers, and unreferenced `lrnU_evamen` alias. Maintained experiments use `ttnpe_classifier`, `estimate_mda_ranks`, the current contraction helpers, and `lrnU_btt`.
+- Removed the duplicate upstream `AXB` callback and replaced the one-line `T2V` helper with MATLAB's `x(:)` indexing. TTNPE now explicitly checks for upstream `AXB`/`XAB` callbacks.
+- Removed temporary migration scripts and the empty former `functs` directory.
+- Stopped adding the unused TP Toolbox directory to the MATLAB path; its bundled files and license remain intact.
+- Removed discarded factor copies, reversal loops, identity permutations, unused solver outputs/options, and unnecessary temporary arrays from the TTDA/BTT/MPS implementations.
+- Consolidated repeated parameter documentation into `algorithm_parameters` and the code guide, retaining source attribution.
+
+Compatibility entry points, numerical presets, branch contraction order, legacy result fields, and storage conventions remain. Cleanup eliminates bookkeeping from measured execution time; numerical equivalence and timing still require the deferred MATLAB runs.
+
 ## Changes that can affect results
 
 These are deliberate implementation repairs, not verified benchmark-equivalence claims.
