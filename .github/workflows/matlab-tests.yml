@@ -1,0 +1,35 @@
+name: MATLAB tests
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    name: MATLAB R2024b / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: matlab-actions/setup-matlab@v3
+        with:
+          release: R2024b
+          products: Statistics_and_Machine_Learning_Toolbox
+      - name: Run project tests
+        uses: matlab-actions/run-tests@v3
+        with:
+          select-by-folder: tests
+          test-results-junit: test-results/results.xml
+          code-coverage-cobertura: test-results/coverage.xml
+          source-folder: src
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: matlab-results-${{ matrix.os }}
+          path: test-results/
+          if-no-files-found: ignore

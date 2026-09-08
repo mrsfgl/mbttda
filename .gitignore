@@ -1,0 +1,10 @@
+.tools/
+results/
+result_*/
+result_full_*/
+mdaResult_*/
+test-results/
+*.asv
+*.m~
+.DS_Store
+data/external/

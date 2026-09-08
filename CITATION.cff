@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying paper when using this research code."
+title: "Multi-Branch Tensor-Train Discriminant Analysis"
+type: software
+authors:
+  - family-names: Sofuoglu
+    given-names: Seyyid Emre
+  - family-names: Aviyente
+    given-names: Selin
+repository-code: "https://github.com/mrsfgl/mbttda"
+preferred-citation:
+  type: report
+  title: "Multi-Branch Tensor Network Structure for Tensor-Train Discriminant Analysis"
+  authors:
+    - family-names: Sofuoglu
+      given-names: Seyyid Emre
+    - family-names: Aviyente
+      given-names: Selin
+  year: 2020
+  number: "arXiv:1904.06788v2"
+  doi: "10.48550/arXiv.1904.06788"
+  url: "https://arxiv.org/abs/1904.06788v2"
